@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Jua&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --skyblue: #67ADEE;
+    --darkblue: #1C68AD;
+    --white: #fff;
+    --green: #A2E098;
+    --yellow: #E6F0A8;
+    --title-size: 1.45rem;
+    --btn-fz: 1.5rem;
+}
