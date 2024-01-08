@@ -22,10 +22,10 @@ const initialState: ISnakeState= {
     food: [],
     snakeDirection: "right",
     keys: {
-        up: "w",
-        down: "s",
-        right: "d",
-        left: "a"
+        up: "",
+        down: "",
+        right: "",
+        left: ""
     }
 }
 
@@ -85,6 +85,9 @@ export const snakeSlice = createSlice({
         },
         setPause: (state) => {
             state.isPause = !state.isPause
+        },
+        setKeys: (state, action) => {
+            state.keys = action.payload
         }
     },
 })

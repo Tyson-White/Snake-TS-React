@@ -7,7 +7,6 @@ import Pause from "./Pause.tsx";
 import Start from "./Start.tsx";
 
 
-
 const GameWindow:FC<Settings> = ({cols, rows, speed, }) => {
 
     const tableRef = useRef<HTMLDivElement | null>(null)
@@ -88,7 +87,12 @@ const GameWindow:FC<Settings> = ({cols, rows, speed, }) => {
         return ""
     }
 
-    const gameLoop = useCallback((currentFood: any[], currentHead: any[], currentSnakeBody: any[]) => {
+    const roundSnakePart = (currentIndex: number, currentBody: any[]): string => {
+
+        return ""
+    }
+
+    const gameLoop = useCallback((currentFood: number[], currentHead: number[], currentSnakeBody: any[]) => {
 
         if (!isPause) {
             setTimeout(() => {
@@ -122,6 +126,10 @@ const GameWindow:FC<Settings> = ({cols, rows, speed, }) => {
 
     }, [isStart])
 
+    useEffect(() => {
+
+    }, []);
+
     return (<>
         <div ref={tableRef} className={"bg-[var(--yellow)] relative "}>
             {!isStart && <Start/>}
@@ -136,7 +144,7 @@ const GameWindow:FC<Settings> = ({cols, rows, speed, }) => {
                                 `}></div>}
                             {snakeBody.map((item, index) => (
                                 item[0] === row && item[1] === col &&
-                                <div className={`h-[100%] w-[100%] bg-[var(--green)] duration-150 ${index === snakeBody.length - 1 && setSnakeTailBorder(snakeBody)}`}></div>
+                                <div className={`h-[100%] w-[100%] bg-[var(--green)] duration-150 ${roundSnakePart(index, snakeBody)} ${index === snakeBody.length - 1 && setSnakeTailBorder(snakeBody)}`}></div>
                             ))}
                             {food[0] === row && food[1] === col && <div className="absolute">
                                 <img src={appleIcon} alt="" width={40} height={40}/>

@@ -1,0 +1,10 @@
+{
+  "settings": {
+    "control": {
+      "up": "w",
+      "left": "a",
+      "right": "d",
+      "down": "s"
+    }
+  }
+}
